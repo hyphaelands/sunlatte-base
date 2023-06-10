@@ -1,0 +1,3 @@
+rootProject.name = 'sunlatte'
+
+include 'sunlatte-common', 'sunlatte-spigot', 'sunlatte-velocity'

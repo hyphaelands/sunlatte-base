@@ -1,0 +1,6 @@
+name: Sunlatte
+version: @version@
+main: net.hyphaelands.sunlatte.SunlatteSpigot
+api-version: 1.20
+authors: [ Hyphaelands ]
+website: https://hyphaelands.net
