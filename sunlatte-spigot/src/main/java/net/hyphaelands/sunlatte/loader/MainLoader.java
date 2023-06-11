@@ -8,15 +8,16 @@
  * @created : 11/06/2023
  */
 
-package loader;
+package net.hyphaelands.sunlatte.loader;
 
 import com.google.inject.Inject;
-import loader.loader.ListenerLoader;
+import net.hyphaelands.sunlatte.loader.loader.ListenerLoader;
 
 import java.util.Collections;
 
 public class MainLoader implements ILoader {
-    @Inject ListenerLoader listenerLoader;
+    @Inject
+    ListenerLoader listenerLoader;
 
     @Override
     public void load() {

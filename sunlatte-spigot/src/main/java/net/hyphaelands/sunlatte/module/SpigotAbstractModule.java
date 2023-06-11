@@ -8,12 +8,12 @@
  * @created : 11/06/2023
  */
 
-package module;
+package net.hyphaelands.sunlatte.module;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Inject;
 import com.google.inject.name.Names;
-import loader.MainLoader;
+import net.hyphaelands.sunlatte.loader.MainLoader;
 import net.hyphaelands.sunlatte.SunlatteSpigot;
 import net.hyphaelands.sunlatte.player.LatteBukkitPlayer;
 import player.LattePlayerManager;

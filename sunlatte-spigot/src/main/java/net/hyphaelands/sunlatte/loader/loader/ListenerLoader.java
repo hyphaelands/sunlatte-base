@@ -8,10 +8,10 @@
  * @created : 11/06/2023
  */
 
-package loader.loader;
+package net.hyphaelands.sunlatte.loader.loader;
 
 import com.google.inject.Inject;
-import loader.ILoader;
+import net.hyphaelands.sunlatte.loader.ILoader;
 import net.hyphaelands.sunlatte.SunlatteSpigot;
 import net.hyphaelands.sunlatte.listener.bukkit.PlayerJoinListener;
 import net.hyphaelands.sunlatte.listener.latte.LattePlayerJoinListener;

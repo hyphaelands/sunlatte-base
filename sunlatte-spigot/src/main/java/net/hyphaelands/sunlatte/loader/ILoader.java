@@ -8,7 +8,7 @@
  * @created : 11/06/2023
  */
 
-package loader;
+package net.hyphaelands.sunlatte.loader;
 
 public interface ILoader {
     void load();

@@ -12,7 +12,7 @@ package net.hyphaelands.sunlatte;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import module.SpigotAbstractModule;
+import net.hyphaelands.sunlatte.module.SpigotAbstractModule;
 import org.bukkit.plugin.java.JavaPlugin;
 import service.IService;
 
