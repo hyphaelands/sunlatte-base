@@ -15,8 +15,12 @@ import com.google.inject.Inject;
 import com.google.inject.name.Names;
 import loader.MainLoader;
 import net.hyphaelands.sunlatte.SunlatteSpigot;
+import net.hyphaelands.sunlatte.player.LatteBukkitPlayer;
+import player.LattePlayerManager;
 
 public class SpigotAbstractModule extends AbstractModule {
+    private final LattePlayerManager<LatteBukkitPlayer> lattePlayerManager = new LattePlayerManager<>(LatteBukkitPlayer.class);
+
     private final SunlatteSpigot sunlatteSpigot;
 
     @Inject private MainLoader mainLoader;
@@ -28,6 +32,9 @@ public class SpigotAbstractModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(SunlatteSpigot.class).toInstance(sunlatteSpigot);
+
+        bind(LattePlayerManager.class).toInstance(lattePlayerManager);
+
         bind(MainLoader.class).annotatedWith(Names.named("loader")).toInstance(mainLoader);
     }
 }
