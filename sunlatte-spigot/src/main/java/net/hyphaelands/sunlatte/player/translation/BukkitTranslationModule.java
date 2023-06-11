@@ -13,19 +13,17 @@ package net.hyphaelands.sunlatte.player.translation;
 import com.google.inject.Inject;
 import me.yushust.message.MessageHandler;
 import me.yushust.message.MessageProvider;
-import me.yushust.message.source.MessageSource;
-import me.yushust.message.source.MessageSourceDecorator;
 import net.hyphaelands.sunlatte.player.LatteBukkitPlayer;
+import translation.LatteMessageSource;
 
 public class BukkitTranslationModule {
+    @Inject private LatteMessageSource latteMessageSource;
     @Inject private BukkitPlayerLinguist bukkitPlayerLinguist;
     @Inject private BukkitMessageSender bukkitMessageSender;
 
     public MessageHandler provide() {
-        MessageSource messageSource = MessageSourceDecorator.decorate().get();
-
         MessageProvider messageProvider = MessageProvider.create(
-                messageSource,
+                latteMessageSource,
                 settings -> settings
                         .specify(LatteBukkitPlayer.class)
                         .setLinguist(bukkitPlayerLinguist)
