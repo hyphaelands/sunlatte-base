@@ -18,6 +18,7 @@ import com.github.benmanes.caffeine.cache.Caffeine;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.Optional;
+import java.util.function.Consumer;
 
 public class CaffeineObjectCache<T extends CacheModel> implements IObjectCache<T> {
     private final Cache<String, T> cache;
@@ -36,7 +37,37 @@ public class CaffeineObjectCache<T extends CacheModel> implements IObjectCache<T
     }
 
     @Override
+    public boolean isPresent(String id) {
+        return Optional.ofNullable(this.cache.getIfPresent(id)).isPresent();
+    }
+
+    @Override
+    public void ifPresent(String id, Consumer<T> consumer) {
+        get(id).ifPresent(consumer);
+    }
+
+    @Override
     public void put(T object) {
         this.cache.put(object.getId(), object);
+    }
+
+    @Override
+    public void invalidate(String id) {
+        this.cache.invalidate(id);
+    }
+
+    @Override
+    public void invalidateAll() {
+        this.cache.invalidateAll();
+    }
+
+    @Override
+    public void list() {
+        this.cache.asMap();
+    }
+
+    @Override
+    public long estimatedSize() {
+        return this.cache.estimatedSize();
     }
 }

@@ -11,8 +11,22 @@
 package cache;
 
 import java.util.Optional;
+import java.util.function.Consumer;
 
 public interface IObjectCache<T> {
     Optional<T> get(String id);
+
+    boolean isPresent(String id);
+
+    void ifPresent(String id, Consumer<T> consumer);
+
     void put(T object);
+
+    void invalidate(String id);
+
+    void invalidateAll();
+
+    void list();
+
+    long estimatedSize();
 }
