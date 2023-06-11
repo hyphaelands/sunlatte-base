@@ -8,11 +8,11 @@
  * @created : 11/06/2023
  */
 
-package packet;
+package messaging;
 
 import exception.messaging.UnknownChannelException;
 import lombok.Data;
-import packet.packet.MessagePacket;
+import messaging.packet.MessagePacket;
 
 @Data
 public enum PacketChannel {

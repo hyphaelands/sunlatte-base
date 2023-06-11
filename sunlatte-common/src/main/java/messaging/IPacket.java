@@ -8,7 +8,7 @@
  * @created : 11/06/2023
  */
 
-package packet;
+package messaging;
 
 public interface IPacket {
     PacketChannel getChannel();

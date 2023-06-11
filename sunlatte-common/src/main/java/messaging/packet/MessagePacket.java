@@ -1,11 +1,11 @@
-package packet.packet;
+package messaging.packet;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import packet.IPacket;
-import packet.PacketChannel;
+import messaging.IPacket;
+import messaging.PacketChannel;
 
 import java.util.UUID;
 
