@@ -19,4 +19,9 @@ public abstract class LatteBukkitPlayer extends LattePlayer implements Player {
     public LatteBukkitPlayer(UUID uuid) {
         super(uuid);
     }
+
+    @Override
+    public void sendTranslatedMessage(String key) {
+
+    }
 }
