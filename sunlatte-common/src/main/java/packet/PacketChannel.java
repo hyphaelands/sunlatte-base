@@ -12,6 +12,7 @@ package packet;
 
 import exception.messaging.UnknownChannelException;
 import lombok.Data;
+import packet.packet.MessagePacket;
 
 @Data
 public enum PacketChannel {

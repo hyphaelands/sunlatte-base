@@ -11,5 +11,5 @@
 package packet;
 
 public interface IPacket {
-    public String getChannel();
+    PacketChannel getChannel();
 }
