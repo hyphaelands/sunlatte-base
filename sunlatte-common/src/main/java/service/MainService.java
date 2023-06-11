@@ -1,13 +1,12 @@
 package service;
 
+import com.google.inject.Inject;
+
+import javax.inject.Named;
 import java.lang.reflect.InvocationTargetException;
 
 public class MainService<T> implements IService {
-    private final Class<T> clazz;
-
-    public MainService(Class<T> clazz) {
-        this.clazz = clazz;
-    }
+    @Inject @Named("loader") private Class<T> clazz;
 
     @Override
     public void start() {
