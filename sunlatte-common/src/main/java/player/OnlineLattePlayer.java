@@ -10,12 +10,16 @@
 
 package player;
 
+import com.google.inject.Inject;
 import lombok.Data;
+import translation.provider.LatteMessageProvider;
 
 import java.util.UUID;
 
 @Data
 public class OnlineLattePlayer implements IOnlineLattePlayer {
+    @Inject LatteMessageProvider latteMessageProvider;
+
     private final UUID uuid;
 
     public OnlineLattePlayer(UUID uuid) {
@@ -24,6 +28,11 @@ public class OnlineLattePlayer implements IOnlineLattePlayer {
 
     @Override
     public void sendMessage(String key) {
+        this.latteMessageProvider.provide().send(this, key);
+    }
 
+    @Override
+    public void sendTranslatedMessage(String key) {
+        this.latteMessageProvider.provide().send(this, key);
     }
 }

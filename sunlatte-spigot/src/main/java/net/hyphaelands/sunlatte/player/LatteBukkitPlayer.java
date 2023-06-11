@@ -10,22 +10,13 @@
 
 package net.hyphaelands.sunlatte.player;
 
-import com.google.inject.Inject;
 import org.bukkit.entity.Player;
 import player.OnlineLattePlayer;
-import translation.provider.LatteMessageProvider;
 
 import java.util.UUID;
 
 public abstract class LatteBukkitPlayer extends OnlineLattePlayer implements Player {
-    @Inject LatteMessageProvider latteMessageProvider;
-
     public LatteBukkitPlayer(UUID uuid) {
         super(uuid);
-    }
-
-    @Override
-    public void sendMessage(String key) {
-        this.latteMessageProvider.provide().send(this, key);
     }
 }
