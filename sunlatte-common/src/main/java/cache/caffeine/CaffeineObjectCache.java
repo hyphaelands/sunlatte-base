@@ -10,6 +10,7 @@
 
 package cache.caffeine;
 
+import cache.CacheModel;
 import cache.IObjectCache;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
@@ -18,7 +19,7 @@ import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 
-public class CaffeineObjectCache<T> implements IObjectCache<T> {
+public class CaffeineObjectCache<T extends CacheModel> implements IObjectCache<T> {
     private final Cache<String, T> cache;
 
     public CaffeineObjectCache() {
@@ -35,7 +36,7 @@ public class CaffeineObjectCache<T> implements IObjectCache<T> {
     }
 
     @Override
-    public void put(String id, T object) {
-        this.cache.put(id, object);
+    public void put(T object) {
+        this.cache.put(object.getId(), object);
     }
 }

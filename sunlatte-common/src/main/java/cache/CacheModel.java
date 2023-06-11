@@ -10,9 +10,6 @@
 
 package cache;
 
-import java.util.Optional;
-
-public interface IObjectCache<T> {
-    Optional<T> get(String id);
-    void put(T object);
+public interface CacheModel {
+    String getId();
 }
