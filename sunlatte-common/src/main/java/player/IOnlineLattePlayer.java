@@ -11,5 +11,5 @@
 package player;
 
 public interface IOnlineLattePlayer {
-    void sendTranslatedMessage(String key);
+    void sendMessage(String key);
 }

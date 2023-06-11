@@ -8,10 +8,10 @@
  * @created : 11/06/2023
  */
 
-package translation;
+package translation.provider;
 
 import me.yushust.message.MessageHandler;
 
-public interface LatteMessageProvider {
+public interface ILatteMessageProvider {
     MessageHandler provide();
 }

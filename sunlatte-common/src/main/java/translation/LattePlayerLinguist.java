@@ -8,17 +8,17 @@
  * @created : 11/06/2023
  */
 
-package net.hyphaelands.sunlatte.player.translation;
+package translation;
 
 import me.yushust.message.language.Linguist;
-import net.hyphaelands.sunlatte.player.LatteBukkitPlayer;
+import player.OnlineLattePlayer;
 
 import javax.annotation.Nullable;
 
-public class BukkitPlayerLinguist implements Linguist<LatteBukkitPlayer> {
+public class LattePlayerLinguist implements Linguist<OnlineLattePlayer> {
     @Nullable
     @Override
-    public String getLanguage(LatteBukkitPlayer entity) {
+    public String getLanguage(OnlineLattePlayer onlineLattePlayer) {
         return null;
     }
 }

@@ -8,27 +8,28 @@
  * @created : 11/06/2023
  */
 
-package net.hyphaelands.sunlatte.player.translation;
+package translation.provider;
 
 import com.google.inject.Inject;
 import me.yushust.message.MessageHandler;
 import me.yushust.message.MessageProvider;
-import net.hyphaelands.sunlatte.player.LatteBukkitPlayer;
-import translation.LatteMessageProvider;
+import player.OnlineLattePlayer;
+import translation.LatteMessageSender;
 import translation.LatteMessageSource;
+import translation.LattePlayerLinguist;
 
-public class BukkitMessageProvider implements LatteMessageProvider {
+public class LatteMessageProvider implements ILatteMessageProvider {
     @Inject private LatteMessageSource latteMessageSource;
-    @Inject private BukkitPlayerLinguist bukkitPlayerLinguist;
-    @Inject private BukkitMessageSender bukkitMessageSender;
+    @Inject private LattePlayerLinguist lattePlayerLinguist;
+    @Inject private LatteMessageSender latteMessageSender;
 
     public MessageHandler provide() {
         MessageProvider messageProvider = MessageProvider.create(
                 latteMessageSource,
                 settings -> settings
-                        .specify(LatteBukkitPlayer.class)
-                        .setLinguist(bukkitPlayerLinguist)
-                        .setMessageSender(bukkitMessageSender)
+                        .specify(OnlineLattePlayer.class)
+                        .setLinguist(lattePlayerLinguist)
+                        .setMessageSender(latteMessageSender)
         );
 
         return MessageHandler.of(messageProvider);

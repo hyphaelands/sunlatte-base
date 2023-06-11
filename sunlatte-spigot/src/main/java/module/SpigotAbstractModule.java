@@ -17,14 +17,14 @@ import loader.MainLoader;
 import net.hyphaelands.sunlatte.SunlatteSpigot;
 import net.hyphaelands.sunlatte.player.LatteBukkitPlayer;
 import player.LattePlayerManager;
-import translation.LatteMessageProvider;
+import translation.provider.ILatteMessageProvider;
 
 public class SpigotAbstractModule extends AbstractModule {
     private final LattePlayerManager<LatteBukkitPlayer> lattePlayerManager = new LattePlayerManager<>(LatteBukkitPlayer.class);
 
     private final SunlatteSpigot sunlatteSpigot;
 
-    @Inject private LatteMessageProvider latteMessageProvider;
+    @Inject private ILatteMessageProvider latteMessageProvider;
     @Inject private MainLoader mainLoader;
 
     public SpigotAbstractModule(SunlatteSpigot sunlatteSpigot) {
@@ -36,7 +36,7 @@ public class SpigotAbstractModule extends AbstractModule {
         bind(SunlatteSpigot.class).toInstance(sunlatteSpigot);
 
         bind(LattePlayerManager.class).toInstance(lattePlayerManager);
-        bind(LatteMessageProvider.class).toInstance(latteMessageProvider);
+        bind(ILatteMessageProvider.class).toInstance(latteMessageProvider);
 
         bind(MainLoader.class).annotatedWith(Names.named("loader")).toInstance(mainLoader);
     }

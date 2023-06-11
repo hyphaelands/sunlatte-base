@@ -15,15 +15,15 @@ import lombok.Data;
 import java.util.UUID;
 
 @Data
-public class LattePlayer implements IOnlineLattePlayer {
+public class OnlineLattePlayer implements IOnlineLattePlayer {
     private final UUID uuid;
 
-    public LattePlayer(UUID uuid) {
+    public OnlineLattePlayer(UUID uuid) {
         this.uuid = uuid;
     }
 
     @Override
-    public void sendTranslatedMessage(String key) {
+    public void sendMessage(String key) {
 
     }
 }
