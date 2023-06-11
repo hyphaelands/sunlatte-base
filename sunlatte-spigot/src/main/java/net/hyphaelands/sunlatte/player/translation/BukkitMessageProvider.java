@@ -14,9 +14,10 @@ import com.google.inject.Inject;
 import me.yushust.message.MessageHandler;
 import me.yushust.message.MessageProvider;
 import net.hyphaelands.sunlatte.player.LatteBukkitPlayer;
+import translation.LatteMessageProvider;
 import translation.LatteMessageSource;
 
-public class BukkitTranslationModule {
+public class BukkitMessageProvider implements LatteMessageProvider {
     @Inject private LatteMessageSource latteMessageSource;
     @Inject private BukkitPlayerLinguist bukkitPlayerLinguist;
     @Inject private BukkitMessageSender bukkitMessageSender;
