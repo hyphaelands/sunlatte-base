@@ -15,6 +15,7 @@ import net.hyphaelands.sunlatte.player.LatteBukkitPlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
+import translation.LatteTranslation;
 
 import java.util.HashMap;
 import java.util.function.Consumer;
@@ -26,9 +27,9 @@ public class BukkitMenu {
     private final LatteBukkitPlayer latteBukkitPlayer;
     private final Inventory bukkitInventory;
 
-    public BukkitMenu(LatteBukkitPlayer latteBukkitPlayer) {
+    public BukkitMenu(LatteBukkitPlayer latteBukkitPlayer, LatteTranslation title) {
         this.latteBukkitPlayer = latteBukkitPlayer;
 
-        this.bukkitInventory = Bukkit.createInventory(latteBukkitPlayer, 1);
+        this.bukkitInventory = Bukkit.createInventory(latteBukkitPlayer, 1, title.get());
     }
 }
