@@ -21,7 +21,7 @@ dependencies {
     implementation 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
 
-    implementation group: 'com.google.inject', name: 'guice', version: '4.0'
+    implementation 'com.google.inject:guice:5.1.0'
 }
 
 processResources {
