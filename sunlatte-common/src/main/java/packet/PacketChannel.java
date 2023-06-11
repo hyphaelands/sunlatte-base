@@ -10,6 +10,7 @@
 
 package packet;
 
+import exception.messaging.UnknownChannelException;
 import lombok.Data;
 
 @Data
@@ -24,11 +25,11 @@ public enum PacketChannel {
         this.clazz = clazz;
     }
 
-    public static PacketChannel getChannelByName(String channel) {
+    public static PacketChannel getChannelByName(String channel) throws UnknownChannelException {
         for (PacketChannel packetChannel : PacketChannel.values())
             if (packetChannel.channel.equals(channel)) {
                 return packetChannel;
             }
-        throw new UnknownChannelException(channel);
+        throw new UnknownChannelException();
     }
 }
