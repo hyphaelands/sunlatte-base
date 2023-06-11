@@ -15,8 +15,7 @@ import org.slf4j.Logger;
 )
 public class SunlatteVelocity {
 
-    @Inject
-    private Logger logger;
+    @Inject private Logger logger;
 
     @Subscribe
     public void onProxyInitialization(ProxyInitializeEvent event) {

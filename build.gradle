@@ -5,7 +5,12 @@ buildscript {
 
     dependencies {
         classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.4'
+        classpath 'com.google.inject:guice:4.0'
     }
+}
+
+plugins {
+    id 'com.github.johnrengelman.shadow' version '7.1.0'
 }
 
 group = 'net.hyphaelands'
@@ -24,4 +29,8 @@ subprojects {
     repositories {
         mavenCentral()
     }
+}
+
+repositories {
+    mavenCentral()
 }

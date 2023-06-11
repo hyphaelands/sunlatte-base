@@ -5,7 +5,6 @@ import java.util.UUID;
 
 public class LattePlayerManager<T> {
     private final HashMap<UUID, T> playerMap = new HashMap<>();
-
     private final Class<T> clazz;
 
     public LattePlayerManager(Class<T> clazz) {

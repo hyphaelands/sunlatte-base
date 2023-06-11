@@ -1,18 +1,17 @@
 package net.hyphaelands.sunlatte;
 
+import com.google.inject.Guice;
 import lombok.Data;
-import lombok.Getter;
+import module.SpigotAbstractModule;
 import net.hyphaelands.sunlatte.listener.bukkit.PlayerJoinListener;
 import net.hyphaelands.sunlatte.listener.latte.LattePlayerJoinListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 @Data
 public final class SunlatteSpigot extends JavaPlugin {
-    @Getter private static SunlatteSpigot instance;
-
     @Override
     public void onEnable() {
-        instance = this;
+        Guice.createInjector(new SpigotAbstractModule(this)).injectMembers(this);
 
         this.getServer().getPluginManager().registerEvents(new LattePlayerJoinListener(), this);
 
@@ -21,6 +20,5 @@ public final class SunlatteSpigot extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
     }
 }

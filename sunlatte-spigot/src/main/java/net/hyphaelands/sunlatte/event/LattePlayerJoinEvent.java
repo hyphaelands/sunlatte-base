@@ -10,11 +10,8 @@ public final class LattePlayerJoinEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
 
     private final LatteBukkitPlayer latteBukkitPlayer;
-    private boolean cancelled;
 
-    public LattePlayerJoinEvent(LatteBukkitPlayer latteBukkitPlayer) {
-        this.latteBukkitPlayer = latteBukkitPlayer;
-    }
+    private boolean cancelled;
 
     @Override
     public HandlerList getHandlers() {
