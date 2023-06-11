@@ -17,6 +17,9 @@ repositories {
 dependencies {
     compile project(':sunlatte-common')
     compileOnly 'org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT'
+
+    implementation 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
 }
 
 processResources {
