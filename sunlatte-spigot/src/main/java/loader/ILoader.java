@@ -11,6 +11,5 @@
 package loader;
 
 public interface ILoader {
-
     void load();
 }
