@@ -12,9 +12,9 @@ package net.hyphaelands.sunlatte.module;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Inject;
-import com.google.inject.name.Names;
-import net.hyphaelands.sunlatte.loader.MainLoader;
 import net.hyphaelands.sunlatte.SunlatteSpigot;
+import net.hyphaelands.sunlatte.loader.ILoader;
+import net.hyphaelands.sunlatte.loader.MainLoader;
 import net.hyphaelands.sunlatte.player.LatteBukkitPlayer;
 import player.LattePlayerManager;
 import translation.provider.ILatteMessageProvider;
@@ -38,6 +38,6 @@ public class SpigotAbstractModule extends AbstractModule {
         bind(LattePlayerManager.class).toInstance(lattePlayerManager);
         bind(ILatteMessageProvider.class).toInstance(latteMessageProvider);
 
-        bind(MainLoader.class).annotatedWith(Names.named("loader")).toInstance(mainLoader);
+        bind(ILoader.class).toInstance(mainLoader);
     }
 }
