@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.function.Consumer;
 
 @Data
-public class PlayerMenu {
+public class PlayerMenu implements IPlayerMenu {
     private static final HashMap<Integer, Consumer<InventoryClickCallback>> actionHashMap = new HashMap<>();
 
     protected final OnlineLattePlayer onlineLattePlayer;
