@@ -10,25 +10,32 @@
 
 package net.hyphaelands.sunlatte.item;
 
+import item.Item;
 import lombok.Data;
-import lombok.experimental.Accessors;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.SuperBuilder;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import player.OnlineLattePlayer;
 
-import java.util.List;
-
-@Accessors(chain = true)
+@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
 @Data
-public abstract class BukkitItem extends ItemStack {
+public class BukkitItem extends Item {
+    private ItemStack itemStack;
+
     private Material material;
-    private String displayName;
-    private List<String> lore;
 
+    public BukkitItem(OnlineLattePlayer onlineLattePlayer, Material material) {
+        super(onlineLattePlayer);
+    }
+
+    @Override
     public BukkitItem build() {
-        this.setType(this.material);
+        this.itemStack.setType(this.material);
 
-        this.getItemMeta().setDisplayName(this.displayName);
-        this.getItemMeta().setLore(this.lore);
+        this.itemStack.getItemMeta().setDisplayName(this.displayName);
+        this.itemStack.getItemMeta().setLore(this.lore);
 
         return this;
     }
