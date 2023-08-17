@@ -30,4 +30,14 @@ public class BukkitMenu extends PlayerMenu {
 
         this.bukkitInventory = Bukkit.createInventory(latteBukkitPlayer, 1, title.get());
     }
+
+    @Override
+    public void open() {
+        ((LatteBukkitPlayer) this.onlineLattePlayer).openInventory(this.bukkitInventory);
+    }
+
+    @Override
+    public void close() {
+        ((LatteBukkitPlayer) this.onlineLattePlayer).closeInventory();
+    }
 }

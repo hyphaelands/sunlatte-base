@@ -12,9 +12,29 @@ import java.util.function.Consumer;
 public class PlayerMenu {
     private static final HashMap<Integer, Consumer<InventoryClickCallback>> actionHashMap = new HashMap<>();
 
-    private final OnlineLattePlayer onlineLattePlayer;
+    protected final OnlineLattePlayer onlineLattePlayer;
 
     public PlayerMenu(OnlineLattePlayer onlineLattePlayer, LatteTranslation title) {
         this.onlineLattePlayer = onlineLattePlayer;
+    }
+
+    public void open() {
+
+    }
+
+    public void close() {
+
+    }
+
+    public void onOpen() {
+
+    }
+
+    public void onClose() {
+
+    }
+
+    public void onRefresh() {
+
     }
 }
