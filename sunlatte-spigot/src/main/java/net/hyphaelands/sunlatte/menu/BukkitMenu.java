@@ -11,24 +11,22 @@
 package net.hyphaelands.sunlatte.menu;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.SuperBuilder;
+import menu.PlayerMenu;
 import net.hyphaelands.sunlatte.player.LatteBukkitPlayer;
 import org.bukkit.Bukkit;
-import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import translation.LatteTranslation;
 
-import java.util.HashMap;
-import java.util.function.Consumer;
-
 @Data
-public class BukkitMenu {
-    private static final HashMap<Integer, Consumer<InventoryClickEvent>> actionHashMap = new HashMap<>();
-
-    private final LatteBukkitPlayer latteBukkitPlayer;
+@SuperBuilder
+@EqualsAndHashCode(callSuper = true)
+public class BukkitMenu extends PlayerMenu {
     private final Inventory bukkitInventory;
 
     public BukkitMenu(LatteBukkitPlayer latteBukkitPlayer, LatteTranslation title) {
-        this.latteBukkitPlayer = latteBukkitPlayer;
+        super(latteBukkitPlayer, title);
 
         this.bukkitInventory = Bukkit.createInventory(latteBukkitPlayer, 1, title.get());
     }
